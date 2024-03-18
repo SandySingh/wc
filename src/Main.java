@@ -15,11 +15,11 @@ public class Main {
 
     private static boolean isPipedInput() {
         if (System.console() != null) {
-            return true;
+            return false;
         }
 
         try {
-            return System.in.available() > 0;
+            return System.in.available() <= 0;
         } catch (IOException e) {
             return false;
         }
