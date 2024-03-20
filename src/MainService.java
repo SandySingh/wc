@@ -33,7 +33,7 @@ public class MainService {
             switch (selection) {
                 case "-c" -> ans = input.getBytes().length;
                 case "-l" -> ans = input.split("\n").length;
-                case "-w" -> ans = input.split("\\s").length;
+                case "-w" -> ans = input.split("\\s+").length;
                 case "-m" -> ans = input.length();
                 default -> throw new Exception();
             }
@@ -73,7 +73,7 @@ public class MainService {
             switch (selection) {
                 case "-l" -> ans = Files.readAllLines(filePath).size();
                 case "-c" -> ans = Files.readAllBytes(filePath).length;
-                case "-w" -> ans = Files.readString(filePath).split("\\s").length;
+                case "-w" -> ans = Files.readString(filePath).split("\\s+").length;
                 case "-m" -> ans = Files.readString(filePath).length();
                 default -> throw new Exception();
             }
